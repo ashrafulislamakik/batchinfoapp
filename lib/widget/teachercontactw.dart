@@ -15,6 +15,11 @@ class teacherscontactw extends StatelessWidget {
       {
         return AlertDialog(
           title: Text("Are Sure ....."),
+          
+          actions: [
+            ElevatedButton(onPressed: (){}, 
+                child: Text("Ok"))
+          ],
         );
       }
       );

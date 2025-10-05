@@ -1,29 +1,61 @@
-void main() => runApp(MyApp());
+import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("AppBar Navigation Demo"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: GestureDetector(
+              onTap: () {
+                // Navigate to profile page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(
+                      imagePath: "assets/ashraful2.jpg",
+                    ),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 2, color: Colors.blueAccent),
+                ),
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage("assets/ashraful2.jpg"),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: Center(child: Text("Home Screen")),
+    );
+  }
+}
+
+
+
+
+
+class ProfileScreen extends StatelessWidget {
+  final String imagePath;
+
+  ProfileScreen({required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-    //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
-      builder: (_ , child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          // You can use the library anywhere in the app even in theme
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
-          home: child,
-        );
-      },
-      child: const HomePage(title: 'First Method'),
+    return Scaffold(
+      appBar: AppBar(title: Text("Profile Screen")),
+      body: Center(
+        child: Image.asset(imagePath),
+      ),
     );
   }
 }

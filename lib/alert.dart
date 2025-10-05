@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class alert extends StatelessWidget {
   const alert({super.key});
@@ -113,66 +114,69 @@ class alert extends StatelessWidget {
 
       ),
 
-      body: Column(
+      body: SfPdfViewer.asset("assets/sample.pdf"),
 
 
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          
-          Text("Akik",style: Theme.of(context).textTheme.titleMedium,),
-        
-        Center(
-          child: ElevatedButton(onPressed: (){
-            alertdialog();
-          },
-              child: Text("Alert")),
-        ),
-
-          SizedBox(height: 10,),
-
-
-          Center(
-            child: ElevatedButton(onPressed: (){
-              showsipledialog();
-            },
-                child: Text("Alert2")),
-          ),
-
-          SizedBox(height: 10,),
-
-          Center(
-            child: ElevatedButton(onPressed: (){
-              bottomshheet();
-            },
-                child: Text("bottomsheet")),
-          ),
-
-          SizedBox(height: 10,),
-
-          Center(
-            child: ElevatedButton(onPressed: (){
-              loading();
-            },
-                child: Text("loading")),
-          ),
-
-          SizedBox(height: 10,),
-
-
-          Center(
-            child: ElevatedButton(onPressed: (){
-              showsnakebar();
-            },
-                child: Text("Snakebar")),
-          ),
-          
-          Card(
-            child: Text("Ashraful"),
-          )
-
-
-
-      ],),
+      // body: Column(
+      //
+      //
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //
+      //     Text("Akik",style: Theme.of(context).textTheme.titleMedium,),
+      //
+      //   Center(
+      //     child: ElevatedButton(onPressed: (){
+      //       alertdialog();
+      //     },
+      //         child: Text("Alert")),
+      //   ),
+      //
+      //     SizedBox(height: 10,),
+      //
+      //
+      //     Center(
+      //       child: ElevatedButton(onPressed: (){
+      //         showsipledialog();
+      //       },
+      //           child: Text("Alert2")),
+      //     ),
+      //
+      //     SizedBox(height: 10,),
+      //
+      //     Center(
+      //       child: ElevatedButton(onPressed: (){
+      //         bottomshheet();
+      //       },
+      //           child: Text("bottomsheet")),
+      //     ),
+      //
+      //     SizedBox(height: 10,),
+      //
+      //     Center(
+      //       child: ElevatedButton(onPressed: (){
+      //         loading();
+      //       },
+      //           child: Text("loading")),
+      //     ),
+      //
+      //     SizedBox(height: 10,),
+      //
+      //
+      //     Center(
+      //       child: ElevatedButton(onPressed: (){
+      //         showsnakebar();
+      //       },
+      //           child: Text("Snakebar")),
+      //     ),
+      //
+      //     Card(
+      //       child: Text("Ashraful"),
+      //     )
+      //
+      //
+      //
+      // ],),
     );
   }
 }

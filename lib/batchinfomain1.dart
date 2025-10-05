@@ -59,6 +59,55 @@ class batchinfomain1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    submitbutton() {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            //title: Center(child: Text("About Of Owner")),
+
+            
+            content: Column(
+              children: [
+                Container(
+                  width: 80, // ছবির width
+                  height: 80, // ছবির height
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 3,
+                      color: Colors.black,
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage("Ashraful3.jpg"),
+                      fit: BoxFit.cover, // contain দিলে zoom হবে না
+                    ),
+                  ),
+                ),
+                
+                Text("MD. Ashraful islam Akik",style: TextStyle(fontWeight: FontWeight.bold),),
+                Divider(),
+                Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.aspernatur aut odit aut fugit, sed quia "
+                    "consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",style: TextStyle(color: Colors.black),),
+              ],
+            ),
+            
+            
+            
+            
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Ok"),
+              )
+            ],
+          );
+        },
+      );
+    }
+
 
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
@@ -76,18 +125,27 @@ class batchinfomain1 extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Container(
+            child: GestureDetector(
 
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  width: 2,color: Colors.blueAccent
-                )
-              ),
+              onTap: (){
+                submitbutton ();
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=> alert(
+                //     )));
+              },
+
+              child: Container(
+
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    width: 2,color: Colors.blueAccent
+                  )
+                ),
 
 
-              child: CircleAvatar(
-                radius: 20,backgroundImage: AssetImage("ashraful2.jpg"),
+                child: CircleAvatar(
+                  radius: 20,backgroundImage: AssetImage("ashraful2.jpg"),
+                ),
               ),
             ),
           )
